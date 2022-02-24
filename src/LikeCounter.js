@@ -12,7 +12,7 @@ class LikeCounter extends React.Component {
                         <ThumbUpIcon color="secondary"/>
                     </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="123456"/>
+                <ListItemText primary={this.props.count}/>
             </ListItem>
         );
     }

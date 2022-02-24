@@ -6,9 +6,9 @@ class Comment extends React.Component {
         return (
             <ListItem>
                 <ListItemAvatar>
-                    <Avatar src="https://mui.com/static/images/avatar/1.jpg"/>
+                    <Avatar src={this.props.photo}/>
                 </ListItemAvatar>
-                <ListItemText primary="Photos" secondary="Jan 9, 2014"/>
+                <ListItemText primary={this.props.content} secondary={this.props.date}/>
             </ListItem>
         );
     }
