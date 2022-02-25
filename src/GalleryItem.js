@@ -1,9 +1,5 @@
 import * as React from 'react';
-import {
-    Box,
-    Grid,
-    List
-} from "@mui/material";
+import {Box, Grid, List} from "@mui/material";
 import Image from "mui-image";
 import {grey} from "@mui/material/colors";
 import LikeCounter from "./LikeCounter";
@@ -12,7 +8,12 @@ import Comment from "./Comment";
 class GalleryItem extends React.Component {
     getComments() {
         return this.props.data.comments.map((item, index) =>
-            <Comment date={item.date} content={item.content} photo={item.photo} key={index.toString()}/>
+            <Comment
+                date={item.date}
+                content={item.content}
+                photo={item.photo}
+                key={index.toString()}
+            />
         );
     }
 
@@ -27,8 +28,12 @@ class GalleryItem extends React.Component {
                     {this.getComments()}
                 </List>
             </Grid>
+
+
+
         );
     }
+
 }
 
 export default GalleryItem;

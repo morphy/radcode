@@ -27,16 +27,17 @@ class Controls extends React.Component {
                             color="secondary"
                             size="small"
                             sx={{mx: 5}}
+                            onChange={this.props.textHandler}
                         />
                         <Box sx={{width: 200}}>
                             <Slider
                                 size="small"
                                 min={0}
-                                max={100}
-                                defaultValue={70}
+                                max={this.props.sliderMax}
                                 aria-label="Small"
                                 valueLabelDisplay="auto"
                                 color="secondary"
+                                onChangeCommitted={this.props.sliderHandler}
                             />
                         </Box>
                     </Toolbar>
