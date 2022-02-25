@@ -10,29 +10,21 @@ import LikeCounter from "./LikeCounter";
 import Comment from "./Comment";
 
 class GalleryItem extends React.Component {
+    getComments() {
+        return this.props.data.comments.map((item, index) =>
+            <Comment date={item.date} content={item.content} photo={item.photo} key={index.toString()}/>
+        );
+    }
+
     render() {
         return (
             <Grid item xs={4}>
                 <Box>
-                    <Image src="https://picsum.photos/id/579/2000"/>
+                    <Image src={this.props.data.src}/>
                 </Box>
                 <List sx={{width: '100%', bgcolor: grey[300], mb: 10}}>
-                    <LikeCounter count={20000}/>
-                    <Comment
-                        date={'Jan 9, 2014'}
-                        content={'lorem ipsum dolor sit amet'}
-                        photo={'https://mui.com/static/images/avatar/1.jpg'}
-                    />
-                    <Comment
-                        date={'Jan 9, 2014'}
-                        content={'lorem ipsum dolor sit amet'}
-                        photo={'https://mui.com/static/images/avatar/1.jpg'}
-                    />
-                    <Comment
-                        date={'Jan 9, 2014'}
-                        content={'lorem ipsum dolor sit amet'}
-                        photo={'https://mui.com/static/images/avatar/1.jpg'}
-                    />
+                    <LikeCounter count={this.props.data.likes}/>
+                    {this.getComments()}
                 </List>
             </Grid>
         );
